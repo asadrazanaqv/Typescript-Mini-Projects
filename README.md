@@ -1,2 +1,2 @@
-# Typescript-Mini-Projects
+# Typescript_Question_Answere_Assignments
  
