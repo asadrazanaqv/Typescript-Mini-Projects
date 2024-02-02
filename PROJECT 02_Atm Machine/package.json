@@ -1,10 +1,10 @@
 {
-  "name": "@afnansiddiqui__/basic-atm-machine",
-  "version": "1.0.0",
+  "name": "project-atm-02",
+  "version": "1.4.3",
   "description": "",
-  "main": "index.js",
+  "main": "atm.js",
   "type": "module",
-  "bin": "Atm.js",
+  "bin": "./atm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.10"
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.11"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/inquirer": "^9.0.3"
   }
 }

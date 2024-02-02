@@ -1,8 +1,9 @@
-This is my first Calculator on Hard Coding
+HOW TO INSTALL!
 
+Go To Command Prompt.
 
-More Versions going to come
+Type "npm i asadrazanaqvcalculator-cli" & Press Enter.
 
-To Run my Calculator use command
+Type "npx  asadrazanaqvcalculator-cli" & Press Enter.
 
-npm i @afnansiddiqui__/calculator
+Enjoy CLI Based Calculator.

@@ -1,82 +1,58 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
-const balance = Math.floor(Math.random() * 1000000);
-const answers = await inquirer.prompt([
-    {
-        type: "input",
-        name: "userID",
-        message: "Kindly Enter Your ID"
-    },
-    {
-        type: "number",
-        name: "userPin",
-        message: "Kindly Enter Your PIN"
-    },
-    {
-        type: "list",
-        name: "typeofaccount",
-        choices: ["Current", "Saving", "Balance Inquiry"],
-        message: "Kindly select your Account Type"
-    },
-    {
-        type: "list",
-        name: "typeoftransaction",
-        choices: ["FastCash", "Withdraw"],
-        message: "Kindly select your transaction",
-        when(answers) {
-            return answers.typeofaccount === "Current" || answers.typeofaccount === "Saving";
+import chalk from "chalk";
+async function main() {
+    let transaction = await inquirer.prompt([
+        {
+            name: "userId",
+            type: "input",
+            message: chalk.bold.yellow `Enter you Username:`
         },
-    },
-    {
-        type: "input",
-        name: "BalanceInquiry",
-        message: "Press Enter to check Your Balance",
-        when(answers) {
-            return answers.typeofaccount === "Balance Inquiry";
+        {
+            name: "userPin",
+            type: "number",
+            message: chalk.yellow.bold `Enter you PIN:`
         },
-    },
-    {
-        type: "list",
-        name: "FastCash",
-        choices: [5000, 10000, 15000, 20000],
-        message: "Kindly select Amount",
-        when(answers) {
-            return answers.typeoftransaction === "FastCash";
+        {
+            name: "AccountType",
+            message: chalk.bold.italic.blue `Select Your Account Type:`,
+            type: "list",
+            choices: [chalk.bold.redBright `Current`, chalk.bold.redBright `Saving`]
         },
-    },
-    {
-        type: "number",
-        name: "withdrawmethod",
-        message: "Kindly Enter Your Amount",
-        when(answers) {
-            return answers.typeoftransaction === "Withdraw";
+        {
+            name: "transactionType",
+            type: "list",
+            choices: ["Cash Withdrawal", "Fast Cash"],
+            message: chalk.bold.italic.blue `Select Your Transaction Type:`
         },
-    }
-]);
-// console.log(answers);
-if (answers.typeofaccount === "Balance Inquiry") {
-    console.log("Your balance is:", balance);
-}
-else if (answers.typeoftransaction === "FastCash") {
-    const selectedAmount = answers.FastCash;
-    if (balance >= selectedAmount) {
-        const remaining = balance - selectedAmount;
-        console.log("You took", selectedAmount, "from", balance);
-        console.log("Your remaining balance is:", remaining);
+        {
+            name: "Amount",
+            type: "input",
+            message: "Enter Your Amount in multiple of 500:",
+            when(transaction) {
+                return transaction.transactionType === `Cash Withdrawal`;
+            }
+        },
+        {
+            name: "Amount",
+            type: "list",
+            choices: [500, 1000, 2000, 5000, 10000, 20000],
+            message: chalk.yellow `Select Your Amount:`,
+            when(transaction) {
+                return transaction.transactionType === `Fast Cash`;
+            }
+        }
+    ]);
+    let enteredAmount = transaction.Amount;
+    let bankbalance = Math.round(Math.random() * 100000000);
+    if (bankbalance >= enteredAmount) {
+        console.log(chalk.bold.bgGreenBright `Transaction Succesfull \n Your Previous Balance : ${bankbalance}`);
+        let balance = (bankbalance - enteredAmount);
+        console.log(chalk.blueBright.bold `Your Remaining  Balance : ${balance}`);
     }
     else {
-        console.log("Insufficient Balance");
-    }
-}
-else if (answers.userID & answers.userPin) {
-    const inputamount = answers.withdrawmethod;
-    if (balance >= inputamount) {
-        const remaining = balance - inputamount;
-        console.log("You took", inputamount, "from", balance);
-        console.log("Your remaining balance is:", remaining);
-    }
-    else {
-        console.log("Insufficient Balance");
+        console.log(chalk.bold.white.bgRed `You have insufficient balance \n Please Try Again \n Your Balance: ${bankbalance}`);
     }
 }
 ;
+main();
