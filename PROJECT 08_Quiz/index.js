@@ -16,7 +16,7 @@ let startQuiz = async () => {
         name: "fname",
         message: "What is your name?"
     });
-    for (let i = 1; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         let answers = [...data[i].incorrect_answers, data[i].correct_answer];
         let ans = await inquirer.prompt({
             type: "list",
@@ -25,7 +25,7 @@ let startQuiz = async () => {
             choices: answers.map((val) => val),
         });
         if (ans.quiz == data[i].correct_answer) {
-            ++score;
+            score += 1;
         }
     }
     console.log(`Dear ${chalk.green.bold(name.fname)}, Your score is ${chalk.red.bold(score)} out of ${chalk.red.bold("5")}`);

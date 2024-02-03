@@ -1,6 +1,4 @@
 #! /usr/bin/env node
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Student {
     static idCounter = 10000; // Initial student ID counter
     id;
@@ -74,3 +72,4 @@ students[1].showStatus();
 students[2].showStatus();
 students[3].showStatus();
 students[4].showStatus();
+export {};

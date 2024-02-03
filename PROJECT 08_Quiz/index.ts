@@ -22,7 +22,7 @@ let startQuiz = async () => {
         message: "What is your name?"
     });
 
-    for(let i=1 ; i<5; i++){
+    for(let i=0 ; i<5; i++){
        let answers = [...data[i].incorrect_answers, data[i].correct_answer]
     
 
@@ -34,7 +34,7 @@ let startQuiz = async () => {
        })
     
        if(ans.quiz == data[i].correct_answer) {
-        ++score
+        score += 1
        }
     }
 

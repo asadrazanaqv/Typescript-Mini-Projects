@@ -153,6 +153,15 @@ async function BankService(bank: Bank) {
                     
     
                 }
+                if (ans.dollar = account.balance) {
+                    console.log(chalk.greenBright.bold("Transaction Successfull !!!"));
+                
+                    let newBalance = account.balance - ans.dollar
+                    console.log(`Your Remaing Account Balance is $${newBalance} `);
+                    
+    
+                }
+                
     
                 // // Transaction Method
     

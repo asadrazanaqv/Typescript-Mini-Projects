@@ -1,15 +1,16 @@
 {
-  "name": "project-11_oop-my-bank",
+  "name": "asadrazanaqv-bank-oop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^8.2.0",
     "chalk": "^5.3.0",

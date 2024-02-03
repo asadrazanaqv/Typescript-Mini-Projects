@@ -1,12 +1,14 @@
 {
-  "name": "project-student-management-sys_06",
-  "version": "1.0.0",
+  "name": "asadrazanaqv-student-management-sys",
+  "version": "1.0.6",
   "description": "",
   "main": "class.js",
+  "type": "module",
+  "bin": "./class.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
