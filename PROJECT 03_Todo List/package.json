@@ -1,10 +1,11 @@
 {
-  "name": "@afnansiddiqui__/todolist",
+  "name": "asadraza-todo-list-proj",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "todo.js",
   "type": "module",
-  "bin": "todolist.js",
+  "bin": "./todo.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
