@@ -1,6 +1,6 @@
 {
   "name": "asadraza-todo-list-proj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "todo.js",
   "type": "module",

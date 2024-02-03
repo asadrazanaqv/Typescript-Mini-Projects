@@ -10,4 +10,4 @@ HOW TO INSTALL!
 
 4. Type "npx project-atm-02" & Press ENTER.
 
-5. Enjoy CLI Based Todo List.
+5. Enjoy CLI Based ATM Machine System.
